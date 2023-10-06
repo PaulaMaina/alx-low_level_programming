@@ -28,7 +28,6 @@ int main(void)
 			if (firstNumber == 98 && secondNumber == 99)
 				continue;
 		}
-		putchar('\n');
 	}
 	putchar('\n');
 	return (0);
