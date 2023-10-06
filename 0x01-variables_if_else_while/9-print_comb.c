@@ -10,10 +10,8 @@
  */
 int main(void)
 {
-	int n = 0;
 	int number;
 
-	number = n % 10;
 	for (number = 0; number <= 9; number++)
 	{
 		putchar(48 + number);
