@@ -15,7 +15,7 @@ int main(void)
 
 	for (firstNumber = 0; firstNumber <= 98; firstNumber++)
 	{
-		for (secondNumber = 0; secondNumber <= 99; secondNumber++)
+		for (secondNumber = firstNumber + 1; secondNumber <= 99; secondNumber++)
 		{
 			putchar(48 + (firstNumber / 10));
 			putchar(48 + (firstNumber % 10));
