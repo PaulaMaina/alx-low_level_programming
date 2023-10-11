@@ -10,13 +10,13 @@ int main(void)
 	long i = 1, j = 2;
 	long sum = 2;
 
-	while ( i + j < 4000000)
+	while (i + j < 4000000)
 	{
 		j += i;
 		if (j % 2 == 0)
 			sum += j;
 		i = j - i;
-		++n;	
+		++n;
 	}
 	printf("%ld\n", sum);
 	return (0);
