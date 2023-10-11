@@ -1,15 +1,5 @@
 #include "main.h"
 /**
- * main - invokes the times_table function
- * Return: Always 0
- */
-void times_table(void);
-int main(void)
-{
-	times_table();
-	return (0);
-}
-/**
  * times_table - prints the times table of 9
  * Return: void
  */
