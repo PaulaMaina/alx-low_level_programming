@@ -1,8 +1,7 @@
 /*
  * Author: Pauline Maina
  */
-#include <stdio.h>
-#include <string.h>
+#include "math.h"
 /**
  * main - prints '_putchar' followed by a new line
  * Return: 0 if no errors are encountered
@@ -14,9 +13,9 @@ int main(void)
 
 	while (i < strlen(word))
 	{
-		putchar(word[i]);
+		_putchar(word[i]);
 		i++;
 	}
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
