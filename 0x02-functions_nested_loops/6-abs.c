@@ -4,10 +4,8 @@
  * @int: data type of the parameter
  * Return: The absolute value
  */
-int _abs(int)
+int _abs(int number)
 {
-	int number;
-
 	if (number < 0)
 	{
 		int abs_value;
