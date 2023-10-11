@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _abs - Computes the absolute value of a number
  * @int: data type of the parameter

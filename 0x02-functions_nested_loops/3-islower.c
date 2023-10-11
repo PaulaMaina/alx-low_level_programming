@@ -1,7 +1,7 @@
 /*
  * Author: Pauline Maina
  */
-#include "math.h"
+#include "main.h"
 /**
  * _islower-checks if a letter is lowercase
  * @c: the character to be checked by the function

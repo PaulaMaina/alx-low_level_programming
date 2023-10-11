@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * add - add two integers
  * @int: data type of the parameters

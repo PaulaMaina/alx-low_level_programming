@@ -1,4 +1,4 @@
-#include "math.h"
+#include "main.h"
 /**
  * main - invokes the times_table function
  * Return: Always 0

@@ -1,7 +1,7 @@
 /*
  * Author: Pauline Maina
  */
-#include "math.h"
+#include "main.h"
 /**
  * main-invokes the print_alphabet function
  * Return: 0 if no errors are encountered

@@ -1,7 +1,7 @@
 /*
  * Author: Pauline Maina
  */
-#include "math.h"
+#include "main.h"
 /**
  * main-invokes the print_aplhabet function 10 times
  * Return: Always 0 if no errors are encountered
