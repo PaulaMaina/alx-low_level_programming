@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * add - add two integers
- * @int: data type of the parameters
+ * @num1: first number
+ * @num2: second number
  * Return: result of add
  */
 int add(int num1, int num2)
