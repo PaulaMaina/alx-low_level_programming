@@ -8,7 +8,7 @@ int main(void)
 	int n = 0;
 	long i = 1, j = 2;
 
-	while (n < 98)
+	while (n < 99)
 	{
 		if (n == 0)
 			printf("%ld", i);
