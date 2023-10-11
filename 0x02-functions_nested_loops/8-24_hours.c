@@ -5,8 +5,8 @@
  */
 void jack_bauer(void)
 {
-	int hour_digit1, hour_digit2;
-	int minute_digit1, minute_digit2;
+	int hr_digit1, hr_digit2;
+	int min_digit1, min_digit2;
 
 	for (hr_digit1 = 0; hr_digit1 <= 2; hr_digit1++)
 	{
