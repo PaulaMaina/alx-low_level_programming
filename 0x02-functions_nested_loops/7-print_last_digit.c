@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_last_digit - prints the last digit of a number
- * @int: data type of the parameter
+ * @number: number being chacked
  * Return: value of the last digit
  */
 int print_last_digit(int number)
