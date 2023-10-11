@@ -2,7 +2,6 @@
  * Author: Pauline Maina
  */
 #include "main.h"
-#include <string.h>
 /**
  * main - prints '_putchar' followed by a new line
  * Return: 0 if no errors are encountered
