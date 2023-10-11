@@ -16,7 +16,7 @@ int main(void)
 		}
 		else if (n == 1)
 		{
-			printf("%ld", j);
+			printf(", %ld", j);
 		}
 		else
 		{
