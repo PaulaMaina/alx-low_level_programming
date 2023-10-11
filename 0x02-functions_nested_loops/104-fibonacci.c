@@ -11,7 +11,7 @@ int main(void)
 	while (n < 98)
 	{
 		if (n == 0)
-			printf("%ld,", i);
+			printf("%ld", i);
 		else if (n == 1)
 			printf(", %ld", j);
 		else
