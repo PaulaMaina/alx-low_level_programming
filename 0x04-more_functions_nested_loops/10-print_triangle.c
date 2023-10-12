@@ -27,6 +27,7 @@ void print_triangle(int size)
 				i++;
 			}
 			j++;
+			i = 0;
 			_putchar('\n');
 		}
 	}
