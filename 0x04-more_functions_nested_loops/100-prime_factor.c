@@ -10,7 +10,7 @@ int main(void)
 	long a, maxFactor;
 	double sq = sqrt(num);
 
-	for (a = 1; x <= sq; a++)
+	for (a = 1; a <= sq; a++)
 	{
 		if (num % a == 0)
 			maxFactor = num / a;
