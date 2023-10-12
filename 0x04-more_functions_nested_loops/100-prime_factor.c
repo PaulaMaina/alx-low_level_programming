@@ -15,6 +15,6 @@ int main(void)
 		if (num % a == 0)
 			maxFactor = num / a;
 	}
-	printf("%ld", maxFactor);
+	printf("%ld\n", maxFactor);
 	return (0);
 }
