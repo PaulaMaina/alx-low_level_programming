@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int num = 612852475143;
+	long num = 612852475143;
 	long a, maxFactor;
 	double sq = sqrt(num);
 
