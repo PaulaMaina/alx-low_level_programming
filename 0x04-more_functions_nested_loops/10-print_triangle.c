@@ -19,7 +19,7 @@ void print_triangle(int size)
 		{
 			for (s = size - i; s > 1; s++)
 			{
-				_putchar(32)
+				_putchar(32);
 			}
 			for (j = 0; j <= i; j++)
 			{
