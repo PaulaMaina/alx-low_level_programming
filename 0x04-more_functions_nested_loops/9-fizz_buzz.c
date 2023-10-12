@@ -16,9 +16,13 @@ int main(void)
 		else if (n % 5 == 0)
 		{
 			if (n == 100)
+			{
 				print("Buzz");
+			}
 			else
+			{
 				printf("Buzz ");
+			}
 		}
 		else if ((n % 3 == 0) && (n % 5 == 0))
 		{
