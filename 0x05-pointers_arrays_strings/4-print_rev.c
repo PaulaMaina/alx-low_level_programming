@@ -10,21 +10,18 @@
 void print_rev(char *s)
 {
 	int elem = 0;
-	int strLength = 0;
-	int index = 0;
-	char *rev[];
 
 	while (s[elem] != '\0')
 	{
-		strLength++;
 		elem++;
 	}
 
-	while (strLength > 0)
+	elem -= 1;
+
+	while (s[elem] != '\0')
 	{
-		rev[index] = s[strLength];
-		_putchar(rev[index]);
-		strLength--;
+		_putchar(s[elem]);
+		elem--;
 	}
 	_putchar('\n');
 }
