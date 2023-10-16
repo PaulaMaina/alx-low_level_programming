@@ -14,9 +14,9 @@ void print_array(int *a, int n)
 
 	for (index = 0; index < n; index++)
 	{
-		if (a[index + 1] == '\0')
+		if (index == n - 1)
 		{
-			printf("\n");
+			printf("%d\n", a[index]);
 		}
 		else
 		{
