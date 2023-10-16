@@ -26,6 +26,7 @@ void rev_string(char *s)
 		char a;
 
 		a = *last;
+		*last = *first;
 		*first = a;
 		first++;
 		last--;
