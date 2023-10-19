@@ -10,7 +10,7 @@ char *leet(char *str)
 {
 	int a;
 
-	for (a = 0; str[a] != 0; a++)
+	for (a = 0; str[a] != '\0'; a++)
 	{
 		while (str[a] == 'a' || str[a] == 'A')
 			str[a] = 4;
