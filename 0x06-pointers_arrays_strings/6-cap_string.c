@@ -10,10 +10,10 @@
 char *cap_string(char *str)
 {
 	int a, b;
-	int checker = 0;
+	int checker;
 	char ops[] = ",;.!?\" (){}\n\t";
 
-	for (a = 0; str[a] != '\0'; a++)
+	for (a = 0, checker = 0; str[a] != '\0'; a++)
 	{
 		if (str[0] > 96 && str[0] < 123)
 		{
@@ -45,5 +45,5 @@ char *cap_string(char *str)
 			}
 		}
 	}
-		return (str);
+	return (str);
 }
