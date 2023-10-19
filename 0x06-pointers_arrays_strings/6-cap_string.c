@@ -11,7 +11,7 @@ char *cap_string(char *str)
 {
 	int a, b;
 	int checker = 0;
-	char ops[] = ",;.!?\"(){}\n\t";
+	char ops[] = ",;.!?\" (){}\n\t";
 
 	for (a = 0; str[a] != '\0'; a++)
 	{
@@ -39,12 +39,11 @@ char *cap_string(char *str)
 			{
 				checker = 0;
 			}
-			else if (str[a] > 47 && str[a] < 59)
+			else if (str[a] > 47 && str[a] < 58)
 			{
 				checker = 0;
 			}
 		}
-
-		return (str);
 	}
+		return (str);
 }
