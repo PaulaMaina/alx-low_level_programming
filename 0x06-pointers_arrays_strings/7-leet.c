@@ -8,21 +8,20 @@
  */
 char *leet(char *str)
 {
-	int a;
+	char *encoded_str = str;
+	char c[] = {'a', 'e', 'o', 't', 'l'};
+	int num[] = {4, 3, 0, 7, 1};
+	int i;
 
-	for (a = 0; str[a] != '\0'; a++)
+	while (*str)
 	{
-		while (str[a] == 'a' || str[a] == 'A')
-			str[a] = '4';
-		while (str[a] == 'e' || str[a] == 'E')
-			str[a] = '3';
-		while (str[a] == 'o' || str[a] == 'O')
-			str[a] = '0';
-		while (str[a] == 't' || str[a] == 'T')
-			str[a] = '7';
-		while (str[a] == 'l' || str[a] == 'L')
-			str[a] = '1';
+		for (i = 0; i < 5; i++)
+		{
+			if (*str == c[i] || *str == c[i] - 32)
+				*str = num[i] + '0';
+		}
+		str++;
 	}
 
-	return (str);
+	return (encoded_str);
 }
