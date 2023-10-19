@@ -42,10 +42,6 @@ char *cap_string(char *str)
 			{
 				checker = 0;
 			}
-			else
-			{
-				break;
-			}
 		}
 	}
 	return (str);
