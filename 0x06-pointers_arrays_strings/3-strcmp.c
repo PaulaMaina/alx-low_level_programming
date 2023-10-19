@@ -21,7 +21,6 @@ int _strcmp(char *s1, char *s2)
 			result = s1[a] - s2[a];
 			return (result);
 		}
-
-		return (0);
 	}
+	return (0);
 }
