@@ -19,7 +19,7 @@ char *cap_string(char *str)
 			checker = 1;
 		}
 
-		for (b = 0, ops[b] != '\0'; b++)
+		for (b = 0; ops[b] != '\0'; b++)
 		{
 			if (ops[b] == str[a])
 			{
