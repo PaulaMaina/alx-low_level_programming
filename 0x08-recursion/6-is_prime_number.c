@@ -16,7 +16,7 @@ int prime(int num, int a)
 	if (num <= 1 || num % 2 == 0)
 		return (0);
 
-	if (num % a == 0 && num != 1)
+	if (num % a == 0 && num != a)
 		return (0);
 
 	if (a < num)
