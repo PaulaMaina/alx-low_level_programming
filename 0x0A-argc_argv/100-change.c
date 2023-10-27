@@ -19,7 +19,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	
 	amount = atoi(argv[1]);
 
 	while (amount > 0)
@@ -31,13 +30,11 @@ int main(int argc, char *argv[])
 			amount -= 25;
 			continue;
 		}
-		
 		if ((amount - 10) >= 0)
 		{
 			amount -= 10;
 			continue;
-		}	
-
+		}
 		if ((amount - 5) >= 0)
 		{
 			amount -= 5;
