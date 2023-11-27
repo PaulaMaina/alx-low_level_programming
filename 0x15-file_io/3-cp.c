@@ -49,7 +49,7 @@ void cp_file(ssize_t fd_src, ssize_t fd_target, char *target)
 		{
 			_close(fd_src);
 			_close(fd_target);
-			exit(98);
+			return (98);
 		}
 		len = write(fd_target, buf, len);
 		if (len == -1)
@@ -57,7 +57,7 @@ void cp_file(ssize_t fd_src, ssize_t fd_target, char *target)
 			_close(fd_src);
 			_close(fd_target);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", target);
-			exit(99);
+			return (99);
 		}
 		len = read(fd_src, buf, 1024);
 	}
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
-	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd_target = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_target == -1)
 	{
 		_close(fd_src);
