@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
 
 	if (fd_target == -1)
 		dprintf(SERR, "Error: Can't  write to %s\n", argv[2]), exit(99);
-	do {
+	while (in_status > 0)
+	{
 		in_status = read(fd_src, buffer, MAX_SIZE);
 		if (in_status == -1)
 		{
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
 			if (out_status == -1)
 				dprintf(SERR, "Error: Can't  write to %s\n", argv[2]), exit(99);
 		}
-	} while (in_status > 0);
+	}
 	in_status = close(fd_src);
 	if (in_status == -1)
 		dprintf(SERR, "Error: Can't  close fd %d\n", fd_src), exit(100);
