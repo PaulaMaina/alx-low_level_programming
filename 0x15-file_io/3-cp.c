@@ -1,4 +1,6 @@
 #include "main.h"
+#include <sys/types.h>
+#include <sys/stat.h>
 
 #define MAX_SIZE 1024
 #define SERR STDERR_FILENO
