@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 	if (fd_target == -1)
 	{
 		_close(fd_src);
-		printf(STDERR_FILENO, "Error: Can't  write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't  write to %s\n", argv[2]);
 		exit(99);
 	}
 	cp_file(fd_src, fd_target, argv[2]);
