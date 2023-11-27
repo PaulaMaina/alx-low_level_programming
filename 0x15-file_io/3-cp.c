@@ -12,7 +12,7 @@ size_t _strlen(char *str)
 {
 	size_t str_len;
 
-	for (str_len = 0; str[str_len] != '\0'; str_len++)
+	for (str_len = 0; str[str_len]; str_len++)
 		;
 	return (str_len);
 }
@@ -77,9 +77,6 @@ void cp_file(ssize_t fd_src, ssize_t fd_target, char *target)
 int main(int argc, char *argv[])
 {
 	ssize_t fd_src, fd_target;
-	mode_t mode;
-
-	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -92,7 +89,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
-	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, mode);
+	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (fd_target == -1)
 	{
 		_close(fd_src);
