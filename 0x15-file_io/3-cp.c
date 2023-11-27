@@ -1,4 +1,6 @@
 #include "main.h"
+#include <sys/types.h>
+#include <sys/stat.h>
 
 /**
  * _strlen - calculates the length of a string
@@ -75,6 +77,9 @@ void cp_file(ssize_t fd_src, ssize_t fd_target, char *target)
 int main(int argc, char *argv[])
 {
 	ssize_t fd_src, fd_target;
+	mode_t mode;
+
+	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -87,7 +92,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
-	fd_target = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_target = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (fd_target == -1)
 	{
 		_close(fd_src);
