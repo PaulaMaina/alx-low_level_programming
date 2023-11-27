@@ -36,7 +36,10 @@ int main(int argc, char *argv[])
 		{
 			out_status = write(fd_target, buffer, (ssize_t) in_status);
 			if (out_status == -1)
+			{
+				close(fd_src), close(fd_target);
 				dprintf(SERR, "Error: Can't  write to %s\n", argv[2]), exit(99);
+			}
 		}
 	} while (in_status > 0);
 	in_status = close(fd_src);
