@@ -1,6 +1,4 @@
 #include "main.h"
-#include <sys/types.h>
-#include <sys/stat.h>
 
 #define MAX_SIZE 1024
 #define SERR STDERR_FILENO
@@ -17,16 +15,13 @@ int main(int argc, char *argv[])
 {
 	int fd_src, fd_target, in_status, out_status;
 	char buffer[MAX_SIZE];
-	mode_t mode;
-
-	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 		dprintf(SERR, "Usage: cp file_from file_to\n"), exit(97);
 	fd_src = open(argv[1], O_RDONLY);
 	if (fd_src == -1)
 		dprintf(SERR, "Error: Can't read from file %s\n", argv[1]), exit(98);
-	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
+	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (fd_target == -1)
 		dprintf(SERR, "Error: Can't  write to %s\n", argv[2]), exit(99);
