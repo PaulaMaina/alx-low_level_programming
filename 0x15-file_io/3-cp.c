@@ -76,7 +76,10 @@ int main(int argc, char *argv[])
 	ssize_t fd_src, fd_target;
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		return (97);
+	}
 	fd_src = open(argv[1], O_RDONLY);
 	if (fd_src == -1)
 	{
@@ -88,7 +91,7 @@ int main(int argc, char *argv[])
 	{
 		_close(fd_src);
 		dprintf(STDERR_FILENO, "Error: Can't  write to %s\n", argv[2]);
-		exit(99);
+		return (99);
 	}
 	cp_file(fd_src, fd_target, argv[2]);
 	_close(fd_src);
