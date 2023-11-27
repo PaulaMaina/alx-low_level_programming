@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
-	fd_target = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
 	if (fd_target == -1)
 	{
 		_close(fd_src);
