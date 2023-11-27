@@ -12,7 +12,7 @@ size_t _strlen(char *str)
 {
 	size_t str_len;
 
-	 for (str_len = 0; str[str_len] != '\0'; str_len++)
+	for (str_len = 0; str[str_len] != '\0'; str_len++)
 		;
 	return (str_len);
 }
@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
-	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
+	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, mode);
 	if (fd_target == -1)
 	{
 		_close(fd_src);
