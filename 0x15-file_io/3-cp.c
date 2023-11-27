@@ -20,7 +20,7 @@ size_t _strlen(char *str)
  * @fd: file to close
  */
 
-void _close(ssize_t fd)
+void _close(int fd)
 {
 	if (close(fd) == -1)
 	{
