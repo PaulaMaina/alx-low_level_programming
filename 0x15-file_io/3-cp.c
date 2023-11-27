@@ -49,7 +49,7 @@ void cp_file(ssize_t fd_src, ssize_t fd_target, char *target)
 		{
 			_close(fd_src);
 			_close(fd_target);
-			return (98);
+			exit(98);
 		}
 		len = write(fd_target, buf, len);
 		if (len == -1)
@@ -57,7 +57,7 @@ void cp_file(ssize_t fd_src, ssize_t fd_target, char *target)
 			_close(fd_src);
 			_close(fd_target);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", target);
-			return (99);
+			exit(99);
 		}
 		len = read(fd_src, buf, 1024);
 	}
