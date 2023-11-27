@@ -1,7 +1,6 @@
 #include "main.h"
-#include <sys/types.h>
-#include <sys/stat.h>
 
+<<<<<<< HEAD
 /**
  * _strlen - calculates the length of a string
  * @str: string
@@ -64,40 +63,67 @@ void cp_file(ssize_t fd_src, ssize_t fd_target, char *target)
 		len = read(fd_src, buf, 1024);
 	}
 }
+=======
+#define MAX_SIZE 1024
+#define SERR STDERR_FILENO
+>>>>>>> 8811387810a2f6d054797f683607a73a02bfa012
 
 /**
- * main - main function that copies one file to another
+ * main - copies one file to another
  * @argc: number of arguments
  * @argv: list of arguments
  *
- * Return: 0 on success, 97 on incorrect args, 98 on source error,
- * 99 on target error, 100 on close a file error
+ * Return: 0 else 97, 98, 99, 100
  */
 
 int main(int argc, char *argv[])
 {
+<<<<<<< HEAD
 	ssize_t fd_src, fd_target;
+=======
+	int fd_src, fd_target, in_status, out_status;
+	char buffer[MAX_SIZE];
+>>>>>>> 8811387810a2f6d054797f683607a73a02bfa012
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		return (97);
-	}
+		dprintf(SERR, "Usage: cp file_from file_to\n"), exit(97);
 	fd_src = open(argv[1], O_RDONLY);
 	if (fd_src == -1)
+<<<<<<< HEAD
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
 	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+=======
+		dprintf(SERR, "Error: Can't read from file %s\n", argv[1]), exit(98);
+	fd_target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+
+>>>>>>> 8811387810a2f6d054797f683607a73a02bfa012
 	if (fd_target == -1)
-	{
-		_close(fd_src);
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		return (99);
-	}
-	cp_file(fd_src, fd_target, argv[2]);
-	_close(fd_src);
-	_close(fd_target);
+		dprintf(SERR, "Error: Can't  write to %s\n", argv[2]), exit(99);
+	do {
+		in_status = read(fd_src, buffer, MAX_SIZE);
+		if (in_status == -1)
+		{
+			dprintf(SERR, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		if (in_status > 0)
+		{
+			out_status = write(fd_target, buffer, (ssize_t) in_status);
+			if (out_status == -1)
+			{
+				close(fd_src), close(fd_target);
+				dprintf(SERR, "Error: Can't  write to %s\n", argv[2]), exit(99);
+			}
+		}
+	} while (in_status > 0);
+	in_status = close(fd_src);
+	if (in_status == -1)
+		dprintf(SERR, "Error: Can't  close fd %d\n", fd_src), exit(100);
+	out_status = close(fd_target);
+	if (out_status == -1)
+		dprintf(SERR, "Error: Can't  close fd %d\n", fd_target), exit(100);
 	return (0);
 }
