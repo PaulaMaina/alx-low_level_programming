@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define MAX_SIZE 1204
+#define MAX_SIZE 1024
 #define SERR STDERR_FILENO
 
 /**
@@ -41,12 +41,12 @@ int main(int argc, char *argv[])
 			if (out_status == -1)
 				dprintf(SERR, "Error: Can't  write to %s\n", argv[2]), exit(99);
 		}
-	} while (in_status > 0)
+	} while (in_status > 0);
 	in_status = close(fd_src);
 	if (in_status == -1)
 		dprintf(SERR, "Error: Can't  close fd %d\n", fd_src), exit(100);
 	out_status = close(fd_target);
 	if (out_status == -1)
-		dprintf(SERR, "Error: Can't  close fd %d\n", fd_src), exit(100);
+		dprintf(SERR, "Error: Can't  close fd %d\n", fd_target), exit(100);
 	return (0);
 }
