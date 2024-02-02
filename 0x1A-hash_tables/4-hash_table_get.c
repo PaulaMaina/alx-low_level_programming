@@ -4,7 +4,6 @@
  * hash_table_get - retrieves a value associated with a key
  * @ht: hash table
  * @key: key
- * 
  * Return: value associated with the element or NULL if key is not found
  */
 
