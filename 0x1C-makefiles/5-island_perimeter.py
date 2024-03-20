@@ -11,7 +11,7 @@ def island_perimeter(grid):
         row.append(0)
 
     grid.insert(0, [0 for r in range(size + 2)])
-    gird.append([0 for r in range(size + 2)])
+    grid.append([0 for r in range(size + 2)])
 
     for en, row in enumerate(grid):
         for n, num in enumerate(row):
